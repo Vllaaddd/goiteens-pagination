@@ -25,6 +25,8 @@ searchForm.addEventListener('input', e => {
 btnFetch.addEventListener('click', e => {
     e.preventDefault();
 
+    pageSize = 5;
+
     const query = searchForm.value || 'news'
 
     searchingTheme.innerHTML = `Ви шукаєте: ${query}`
