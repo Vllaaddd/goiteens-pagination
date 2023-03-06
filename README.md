@@ -1,1 +1,1 @@
-# goiteens-pagination
+# goiteens-js-advance-promise
