@@ -21,7 +21,6 @@ img {
   display: flex;
   justify-content: center;
   padding: 8px;
-  margin-bottom: 24px;
 }
 
 .button {
@@ -68,4 +67,9 @@ img {
 
 .show-less{
   margin-bottom: 10px;
+}
+
+.serchingTheme{
+  text-align: center;
+  margin-bottom: 25px;
 }

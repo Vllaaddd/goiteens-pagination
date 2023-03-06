@@ -5,8 +5,9 @@ const loadMoreBtn = document.querySelector('[data-action="load-more"]');
 const showLessBtn = document.querySelector('[data-action="show-less"]');
 const btnFetch = document.querySelector('.btn-fetch');
 const newsList = document.querySelector('.js-card-container');
+const searchingTheme = document.querySelector('.serchingTheme')
 
-let pageSize = 10;
+let pageSize = 5;
 btnFetch.disabled = true
 loadMoreBtn.style.display = 'none';
 showLessBtn.style.display = 'none';
@@ -24,14 +25,16 @@ searchForm.addEventListener('input', e => {
 btnFetch.addEventListener('click', e => {
     e.preventDefault();
 
-    const query = searchForm.value || 'bitcoin'
+    const query = searchForm.value || 'news'
+
+    searchingTheme.innerHTML = `Ви шукаєте: ${query}`
 
     fetchSmth(query)
 
     loadMoreBtn.addEventListener('click', onLoadMore);
 
     function onLoadMore(){
-        pageSize += 10;
+        pageSize += 5;
     
         fetchSmth(query)
     }
@@ -39,9 +42,9 @@ btnFetch.addEventListener('click', e => {
     showLessBtn.addEventListener('click', onShowLess);
 
     function onShowLess(){
-        if(pageSize > 10){
-            pageSize -= 10;
-        }else if (pageSize <= 10){
+        if(pageSize > 5){
+            pageSize -= 5;
+        }else if (pageSize <= 5){
         }
     
         fetchSmth(query)
